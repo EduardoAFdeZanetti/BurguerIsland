@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <title>BurgerIsland</title>
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <a href="index.html" class="logo">B<span>urge</span>R<span>.</span>I<span>slan</span>D</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item"><a href="history.html">History</a></li>
+                <li class="nav-item"><a href="menu.html">Menu</a></li>
+                <li class="nav-item"><a href="login.html">Login</a></li>
+            </ul>
+            <div class="menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="loginpic">
+        <img src="../static/img/login.jpg">
+    </div>
+    
+    <div class="loginform">
+        <h2>Login</h2>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+        <form action="{{ url_for('login_post') }}" method="post">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br><br>
+            <input type="submit" value="Submit">
+            <div class="registerbtn"><a href="register.html">Register</a></div>
+        </form>
+    </div>
+
+    <div class="footer">2024 burger.island.com All rights Reserved</div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="../static/js/script.js"></script>
+</body>
+</html>
